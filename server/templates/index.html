@@ -5,7 +5,22 @@
     </head>
     <body>
         <div id = "guideBar" style = "width: 100%; height: 50px">
-            
+                姓名：
+                <input id = "u_username" type = "text" name="name" />
+                密码：
+                <input id = "u_password" type = "password" name="password">
+                </br></br>
+
+                <button onclick="g_functionhub.setFunc({type:"submit"})">Submit</button>
+                <button onclick="g_functionhub.setFunc({type:"query"})">Query</button>
+                <button onclick="g_functionhub.setFunc({type:"delete"})">Delete</button>
         </div>
+
+        <script src = "../static/js/functionhub.js"></script>
+
+        <script>
+            var g_funcitonhub = new FunctionHub()
+        </script>
+
     </body>
 </html>
