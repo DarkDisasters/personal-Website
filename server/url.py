@@ -3,14 +3,14 @@
 # @Author: anchen
 # @Date:   2018-11-19 16:01:07
 # @Last Modified by:   anchen
-# @Last Modified time: 2018-11-28 11:14:19
+# @Last Modified time: 2018-11-29 21:32:41
 import sys          #utf-8,兼容汉字
 
 from handler.indexHandler import IndexHandler 
-from handler.dbHandler import SaveUserInfo
+from handler.dbHandler import SaveUserHandler
 
 url = [
     (r"/",IndexHandler),
-    (r"saveInfo",SaveUserInfo),
+    (r"/saveInfo",SaveUserHandler),
 
 ]

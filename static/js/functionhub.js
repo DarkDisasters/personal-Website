@@ -1,14 +1,7 @@
-/* 
-* @Author: anchen
-* @Date:   2018-11-28 10:17:01
-* @Last Modified by:   anchen
-* @Last Modified time: 2018-11-28 11:20:08
-*/
-
 function FunctionHub(){
     var _this = this ;
 
-    this.init = function(){
+    this._init = function(){
         this._userInfo = [] ;
         this._password = "" ;
         this._username = "" ;
@@ -20,12 +13,10 @@ function FunctionHub(){
         //     "username": this._username,
         //     "password": this._password
         // )
-        console.log("saveInfo", this._userInfo) ;
+        console.log("saveInfo", "username:", this._username, "passwd:", this._password) ;
         var formData = new FormData() ;
-        formData.append(
-            "username": this._username,
-            "password": this._password
-        ) ;
+        formData.append("username", this._username)
+        formData.append("password", this._password)
         var url = "http://localhost:4000/saveInfo" ;
         lSendUrl("POST", url, formData, self.successSave)
     }
@@ -37,8 +28,8 @@ function FunctionHub(){
     this.setFunc = function(e){
         switch(e.type){
             case 'submit':
-                this._username = document.getElementById("u_username") ;
-                this._password = document.getElementById("u_password") ;
+                this._username = document.getElementById("u_username").value ;
+                this._password = document.getElementById("u_password").value ;
                 console.log(this._username)
                 if(this._username == "" && this._password == ""){
                     window.alert("empty username and password") ;
@@ -60,4 +51,6 @@ function FunctionHub(){
             case 'query':
         }
     }
+
+    this._init()
 }
