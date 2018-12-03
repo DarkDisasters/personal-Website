@@ -1,5 +1,6 @@
 function FunctionHub(){
     var _this = this ;
+    console.log("test")
 
     this._init = function(){
         this._userInfo = [] ;
