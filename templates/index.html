@@ -2,9 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/structure.css">
     </head>
-    <body>
-        <div id = "guideBar" style = "width: 100%; height: 50px">
+
+    <body style="width:100%">
+        <!-- <div id = "guideBar" style = "width: 100%; height: 50px">
                 姓名：
                 <input id = "u_username" type = "text" name="name" />
                 密码：
@@ -14,13 +16,40 @@
                 <button onclick = "g_functionhub.setFunc({type:'submit'})">Submit</button>
                 <button onclick = "g_functionhub.setFunc({type:'query'})">Query</button>
                 <button onclick = "g_functionhub.setFunc({type:'delete'})">Delete</button>
-        </div>
+        </div> -->
         
-        <script src = "../static/jslibraries/jquery.js"></script>
-        <!-- <script src = "G:/postgraduate/gitTUT/projects/Website/personal-Website/static/jslibraries"></script> -->
-        <script src = "../static/js/lfunctionHub.js"></script>
-        <script src = "../static/js/functionhub.js"></script>
+        <!--框架
+            container放所有的div
+            name是自己的名字
+            gallary放自己玩的效果，并有链接可以选择效果 
+            blog为自己写的东西的链接
+            projects为自己做的项目链接
+            introduce为自己的一些链接，github，csdn
+        -->
 
+        <div class = "container">
+            <p class = "name">王帅琦</p>
+            <div id = "gallary">
+                <div id = "gallary_select">
+                    
+                </div>
+                <div id = "gallary_effect">
+                    <canvas id = "effect_canvas"></canvas>
+                </div>
+            </div>
+            <div id = "blog"></div>
+            <div id = "projects"></div>
+            <div id = "introduce"></div>
+
+
+
+        <script src = "../static/jslibraries/jquery.js"></script>
+        <script src = "../static/jslibraries/paper.js"></script>
+        <!-- <script src = "G:/postgraduate/gitTUT/projects/Website/personal-Website/static/jslibraries"></script> -->
+        <script src = "../static/js/gallaryeffect/defaulteffect.js"></script>
+        <script src = "../static/js/lfunctionHub.js"></script>
+        <script src = "../static/js/administeroperation.js"></script>
+        <script src = "../static/js/functionhub.js"></script>
         
         <script>
             var g_functionhub = new FunctionHub()

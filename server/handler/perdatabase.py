@@ -15,12 +15,18 @@ class PERDATABASE:
 		self._collection = self._db[collectionname]
 
 	def saveUserInfo(self, userInfo):
-		record = self._collection.find_one({"name": userInfo["username"]})
+		record = self._collection.find_one({"username": userInfo["username"]})
 		print("record", record)
 		if(record != None):
 			print("record exist")
 			passwd = userInfo["password"]
-			self._collection.update_one({"name": userInfo["username"]},{"$set": {"password": passwd}})
+			self._collection.update_one({"username": userInfo["username"]},{"$set": {"password": passwd}})
 		else:
 			self._collection.insert_one(userInfo)
 		print("save ok")
+
+	def queryUserInfo(self, username):
+		print("perdatabaseusername",username) ;
+		queryRecord = self._collection.find_one({"name": username}) ; 
+		print("queryRecord", queryRecord)
+		return queryRecord ;

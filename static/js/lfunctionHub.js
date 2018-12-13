@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2018-11-28 11:00:21
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-11-28 11:10:49
+* @Last Modified time: 2018-12-04 11:22:13
 */
 
 var lSendUrl = function(PostType, Url, formData, successPaperState, self){
@@ -31,7 +31,7 @@ var lSendUrl = function(PostType, Url, formData, successPaperState, self){
             processData: false ,
             contentType: false , 
             success: function(response){
-                successPaperState(response, self)
+                successPaperState(response, self) ;
             },
             error: function(jqXHR, textStatus, errorMessage){
                 console.log(errorMessage)
