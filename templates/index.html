@@ -2,7 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+        <link rel="stylesheet" type="text/css" href="../static/css/sun/sequences.css"/>
         <link rel="stylesheet" type="text/css" href="../static/css/structure.css">
+
+        <script src = "{{static_url('./jslibraries/d3.min.js')}}"></script>
+        <script src = "{{static_url('./jslibraries/jquery.js')}}"></script>
+        <script src = "{{static_url('./jslibraries/paper.js')}}"></script>
     </head>
 
     <body style="width:100%">
@@ -26,15 +33,34 @@
             projects为自己做的项目链接
             introduce为自己的一些链接，github，csdn
         -->
-
+        
         <div class = "container">
             <p class = "name">王帅琦</p>
             <div id = "gallary">
                 <div id = "gallary_select">
-                    
+                    <button type=""></button>
                 </div>
                 <div id = "gallary_effect">
-                    <canvas id = "effect_canvas"></canvas>
+                    <div id = "sun_body">
+                        <div id="main">
+                          <div id="sequence"></div>
+                          <div id="chart">
+                            <div id="explanation" style="visibility: hidden;">
+                              <span id="percentage"></span><br/>
+                              of my 
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div id="sidebar">
+                      <input type="checkbox" id="togglelegend"> Legend<br/>
+                      <div id="legend" style="visibility: hidden;"></div>
+                    </div>
+                    <script type="text/javascript" src="{{static_url('./js/gallaryeffect/sun/sequences.js')}}"></script>
+                    <script type="text/javascript">
+                      // Hack to make this example display correctly in an iframe on bl.ocks.org
+                      d3.select(self.frameElement).style("height", "500px");
+                    </script> 
                 </div>
             </div>
             <div id = "blog"></div>
@@ -42,14 +68,11 @@
             <div id = "introduce"></div>
 
 
-
-        <script src = "../static/jslibraries/jquery.js"></script>
-        <script src = "../static/jslibraries/paper.js"></script>
-        <!-- <script src = "G:/postgraduate/gitTUT/projects/Website/personal-Website/static/jslibraries"></script> -->
-        <script src = "../static/js/gallaryeffect/defaulteffect.js"></script>
-        <script src = "../static/js/lfunctionHub.js"></script>
-        <script src = "../static/js/administeroperation.js"></script>
-        <script src = "../static/js/functionhub.js"></script>
+        
+        <!-- <script src = "../static/js/gallaryeffect/defaulteffect.js"></script> -->
+        <script src = "{{static_url('./js/lfunctionHub.js')}}"></script>
+        <script src = "{{static_url('./js/administeroperation.js')}}"></script>
+        <script src = "{{static_url('./js/functionhub.js')}}"></script>
         
         <script>
             var g_functionhub = new FunctionHub()
