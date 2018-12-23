@@ -63,7 +63,9 @@
                     </script> 
                 </div>
             </div>
-            <div id = "blog"></div>
+            <div id = "blog_conv">
+                <button id = "loadBlog" onclick="g_functionhub.loadMainBlog()"></button>
+            </div>
             <div id = "projects"></div>
             <div id = "introduce"></div>
 
@@ -71,8 +73,9 @@
         
         <!-- <script src = "../static/js/gallaryeffect/defaulteffect.js"></script> -->
         <script src = "{{static_url('./js/lfunctionHub.js')}}"></script>
+        <script src = "{{static_url('./js/blog/blogfunc.js')}}"></script>
         <script src = "{{static_url('./js/administeroperation.js')}}"></script>
-        <script src = "{{static_url('./js/functionhub.js')}}"></script>
+        <script src = "{{static_url('./js/functionhub.js')}}"></script> 
         
         <script>
             var g_functionhub = new FunctionHub()

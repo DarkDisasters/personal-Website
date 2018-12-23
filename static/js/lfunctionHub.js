@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2018-11-28 11:00:21
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-12-04 11:22:13
+* @Last Modified time: 2018-12-21 21:13:05
 */
 
 var lSendUrl = function(PostType, Url, formData, successPaperState, self){
@@ -15,10 +15,11 @@ var lSendUrl = function(PostType, Url, formData, successPaperState, self){
         else{
             xmlhttp = new ActiveXObject("Microsoft.XMLHttpRequest") ;
         }
+        xmlhttp.open(PostType, Url, true) ;
         xmlhttp.onreadystatechange = function(){
             successPaperState() ;
         }
-        xmlhttp.open(PostType, Url, true) ;
+        
         xmlhttp.send(null)
     }
     else{

@@ -9,7 +9,12 @@ function FunctionHub(){
         this._queryUsername = "" ;
         this._deleteUsername = "" ;
         this._administerOperation = new AdministerOperation() ;
+        this._blogFunc = new BlogFunc(this) ;
 
+    }
+
+    this.loadMainBlog = function(self){
+        this._blogFunc.loadMainBlog()
     }
 
     this.saveInfo = function(){
