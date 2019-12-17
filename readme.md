@@ -22,5 +22,5 @@
     7. source map & webpack-dev-server
     8. hot module replacement
     9. babel
-
+    10. visualize situation of bundle   //cnpm i --save-dev webpack-bundle-analyzer
 ```

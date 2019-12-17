@@ -9,12 +9,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack')
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 
 module.exports = {
     entry: path.join(__dirname, './src/main.js'),
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[hash].bundle.js',
         path: path.resolve(__dirname, 'dist')
+    },
+    optimization:{
+        splitChunks:{
+            chunks:'all',
+            minSize: 0
+        }
     },
     module:{
         rules: [
@@ -47,14 +55,16 @@ module.exports = {
         contentBase: './dist',
         hot: true
     },
-    mode: "production",
+    // mode: "production",
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, './public/index.html'),   //指定 模板页面，将来会根据指定的页面路径，去生成内存中的页面
-            filename: 'index.html'
+            filename: 'index.html',
+            title: 'Code Splitting'
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin()
     ]
 }
