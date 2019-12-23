@@ -4,6 +4,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+function resolve(dir){
+    return path.join(__dirname, dir)
+}
+
 // 通常，在每次构建前清理 /dist 文件夹，是比较推荐的做法，因此只会生成用到的文件。让我们完成这个需求。
 // npm install clean-webpack-plugin --save-dev
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -38,7 +42,7 @@ module.exports = {
                     loader: 'url-loader',
                     options:{
                         name: "[name]-[hash:5].min.[ext]",  //修改文件名 
-                        limit: 15360,   //size <= 15KB
+                        limit: 102400,   
                     }
                 }
             ]},
@@ -72,6 +76,7 @@ module.exports = {
     resolve: {
         alias: {
             // 'vue$': 'vue/dist/vue.js'
+            '@': resolve('src'),
         }
     }
 }
