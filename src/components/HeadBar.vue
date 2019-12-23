@@ -1,14 +1,19 @@
 <template>
     <div class="navContainer" >
         <el-row :gutter="8">
-            <el-col :lg="2" :xl="2" class="avatar">
+            <el-col :lg="1" :xl="1" class="avatar">
               <div>
-                <el-avatar :src="avatarUrl" shape="square" :size="60" fit="fill"></el-avatar>
+                <el-avatar :src="avatarUrl" shape="square" :size="54" fit="fill"></el-avatar>
               </div>
             </el-col>
-            <el-col :lg="4" :xl="4"><div class="grid-content bg-purple">name</div></el-col>
-            <el-col :lg="2" :xl="2"><div class="grid-content bg-purple-light">blank</div></el-col>
-            <el-col :lg="6" :xl="6"><div class="grid-content bg-purple">search</div></el-col>
+            <el-col :lg="4" :xl="4" class="blogname">
+                <span class="name">XiXiWang's Blog</span>
+            </el-col>
+            <el-col :lg="3" :xl="3" class="blank"></el-col>
+            <el-col :lg="6" :xl="6" class="search">
+              <el-input class = "searchinput" placeholder="search" v-model="input" size="42" clearable>
+              </el-input>
+            </el-col>
             <el-col :lg="8" :xl="8">
                 <Navbar/>
             </el-col>
@@ -24,7 +29,8 @@ const avatarUrl = require('@/assets/img/logo.png').default
 export default {
     data(){
       return {
-        avatarUrl
+        avatarUrl,
+        input: '',
       }
     },
     components: {
@@ -43,12 +49,31 @@ export default {
 }
 
 .el-col{
+  height: 64px;
   div{
     height: 64px;
+    .el-input__inner{
+      padding: 5px 0;
+    }
     .el-avatar{
+      margin: 5px 0;
       float: right;
       background: white
     }
+  }
+  
+  .searchinput{
+    width: 90%;
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .name{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;;
+    font-size: 1.8em;
+    color: #409EFF;
+    line-height: 64px;  /*设置line-height与父级元素的height相等*/
+    overflow: hidden;   /*防止内容超出容器或者产生自动换行*/
   }
 }
 
