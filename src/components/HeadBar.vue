@@ -17,7 +17,9 @@
             <el-col :lg="8" :xl="8">
                 <Navbar/>
             </el-col>
-            <el-col :lg="2" :xl="2"><div class="grid-content bg-purple-light">login</div></el-col>
+            <el-col :lg="2" :xl="2">
+              <el-button size="large" plain><span>SIGN OUT</span><i class="el-icon-user el-icon--right"></i></el-button>
+            </el-col>
         </el-row>
     </div>
 </template>
@@ -46,6 +48,7 @@ export default {
     top: 0;
     width: 100%;
     height: 64px;
+    border-bottom: 1px solid #E6E6E6
 }
 
 .el-col{
@@ -77,19 +80,14 @@ export default {
   }
 }
 
-
-
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    height: 64px;
-  }
+.el-button{
+  height: 64px;
+  padding: 0px 0px;
+  border: 0px;
+  font-size: 16px;
+  color: #A6A6A6;
+  font-weight: 550;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;;
+    
+}
 </style>
