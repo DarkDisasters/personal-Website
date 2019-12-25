@@ -1,12 +1,12 @@
 <template>
     <div class="navContainer" >
         <el-row :gutter="8">
-            <el-col :lg="1" :xl="1" class="avatar">
+            <el-col :lg="2" :xl="2" class="avatar">
               <div>
                 <el-avatar :src="avatarUrl" shape="square" :size="54" fit="fill"></el-avatar>
               </div>
             </el-col>
-            <el-col :lg="4" :xl="4" class="blogname">
+            <el-col :lg="3" :xl="3" class="blogname">
                 <span class="name">XiXiWang's Blog</span>
             </el-col>
             <el-col :lg="3" :xl="3" class="blank"></el-col>

@@ -1,15 +1,16 @@
 import VueRouter from 'vue-router'
 
-import HomeContainer from './components/HomeContainer.vue'
+import HomePage from './views/HomePage.vue'
 
 var router = new VueRouter({
     routes:[
         {
             path: '/',
-            component: HomeContainer,
-            redirect: '/home'
+            component: HomePage,
+            redirect: '/homepage'
         },
-        {path: '/home', component: HomeContainer}
+        {path: '/homepage', component: HomePage},
+       
     ]
 })
 

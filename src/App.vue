@@ -5,21 +5,20 @@
                 <Headbar/>
             </el-header>
             <el-main>
-                Main
+                <Mainpage/>
             </el-main>
-            <el-footer>
-                Footer
-            </el-footer>
         </el-container>
     </div>
 </template>
 
 <script>
 import Headbar from './components/HeadBar.vue'
+import Mainpage from './components/Mainpage.vue'
 
 export default {
     components:{
-        Headbar
+        Headbar,
+        Mainpage
     }
 }
 </script>
