@@ -14,7 +14,6 @@
                         <el-col :span="6"></el-col>
                         <el-col :span="6">
                             <el-backtop target=".page-component__scroll .el-scrollbar__wrap" :visibility-height=50>
-                                
                             </el-backtop>
                         </el-col>
                     </el-row>
