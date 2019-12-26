@@ -1,6 +1,6 @@
 <template>
     <div class="paperdiv">
-        <el-container>
+        <el-container style="padding: 0px 70px">
             <el-aside width="200px">
                 <el-scrollbar class='aside-component__scroll' wrap-class="aside" wrap-style="color: red;" view-style="font-weight: bold;" view-class="view-box" :native="false">
                     <el-menu router default-active="pythonbasic" class="el-menu-python">
@@ -51,5 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.el-menu-python{
+    background-color: #FAFAFA;
+}
 </style>

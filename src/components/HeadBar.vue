@@ -3,7 +3,7 @@
         <el-row :gutter="8">
             <el-col :lg="2" :xl="2" class="avatar">
               <div>
-                <el-avatar :src="avatarUrl" shape="square" :size="54" fit="fill"></el-avatar>
+                <el-avatar :src="avatarUrl" shape="square" :size="52" fit="fill"></el-avatar>
               </div>
             </el-col>
             <el-col :lg="3" :xl="3" class="blogname">
@@ -14,10 +14,10 @@
               <el-input class = "searchinput" placeholder="search" v-model="input" size="42" clearable>
               </el-input>
             </el-col>
-            <el-col :lg="8" :xl="8">
+            <el-col :lg="7" :xl="7">
                 <Navbar/>
             </el-col>
-            <el-col :lg="2" :xl="2">
+            <el-col :lg="3" :xl="3">
               <el-button size="large" plain><span>SIGN OUT</span><i class="el-icon-user el-icon--right"></i></el-button>
             </el-col>
         </el-row>
