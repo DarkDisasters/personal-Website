@@ -1,14 +1,19 @@
 <template>
+
     <div class="app-container">
         <el-container>
             <el-header style="height:64px">
                 <Headbar/>
             </el-header>
-            <el-main>
-                <Mainpage/>
-            </el-main>
+            <!-- <el-scrollbar class='page-component__scroll' wrap-class="main" wrap-style="color: red;" view-style="font-weight: bold;" view-class="view-box" :native="false"> -->
+                <el-main>
+                    <Mainpage/>
+                </el-main>
+            <!-- </el-scrollbar> -->
         </el-container>
+        
     </div>
+     
 </template>
 
 <script>
@@ -32,9 +37,24 @@ export default {
     width: 100%;
     height: 100%;
     background-color: #FAFAFA;
+    overflow: hidden;
 }
 .el-header{
     background-color: white
 }
+
+.el-main{
+    padding-right: 0px;
+}
+
+// .page-component__scroll{
+//     height: 100%;
+// }
+// .page-component__scroll .el-scrollbar__wrap {
+//     overflow-x: auto;
+//     // width: 110%; height: 120%;
+//     min-height: 200px;
+// }
+
 
 </style>
