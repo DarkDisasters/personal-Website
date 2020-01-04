@@ -19,7 +19,10 @@ var router = new VueRouter({
         {
             path: '/',
             component: HomePage,
-            redirect: '/homepage'
+            redirect: '/homepage',
+            // children:[
+            //     {path: 'page/:number', component: Page}
+            // ]
         },
         {path: '/homepage', component: HomePage},
         {
@@ -29,6 +32,7 @@ var router = new VueRouter({
         {
             path: '/paper/python',
             component: Pythonview,
+            redirect: '/paper/python/pythonbasic/typeconversion',
             children:[
                 {path: 'pythonbasic/typeconversion', component: TypeConverse},
                 {path: 'pythonbasic/string', component: StringOperation},

@@ -19,6 +19,7 @@
                 <el-scrollbar class='page-component__scroll' wrap-class="main" wrap-style="" view-style="font-weight: bold;" view-class="view-box-homepage" :native="false">
                 
                 <el-main class="mycontent">
+                    <!-- <router-view></router-view> -->
                     <div class="contentdiv">
                         <div class="vitadiv">
                             <div class="textdiv">
@@ -90,26 +91,28 @@
 
                 <el-footer>
                     <el-row class="footer">
-                        <el-col :span="6">
-                            <p>aaa</p>
-                            <p>bbb</p>
-                            <p>ccc</p>
-                            <p>ddd</p>
-                            <p>eee</p>
-                            <p>fff</p>
-                            <p>ggg</p>
-                            <p>ggg</p>
-                            <p>ggg</p>
-                            <p>ggg</p>
-                            
+                        <el-col :span="18" class="pagecount">
+                            <el-pagination
+                                @current-change='handleCurrentChange'
+                                :current-page.sync="currentpage"
+                                background
+                                layout="prev, pager, next"
+                                :total="1000">
+                            </el-pagination>
+                            <!-- <span>{{currentpage}}</span> -->
                         </el-col>
-                        <el-col :span="6"></el-col>
-                        <el-col :span="6"></el-col>
                         <el-col :span="6">
                             <el-backtop target=".page-component__scroll .el-scrollbar__wrap" :visibility-height=50>
                             </el-backtop>
                         </el-col>
                     </el-row>
+                    <!-- <el-pagination
+                        background
+                        layout="prev, pager, next"
+                        :total="1000">
+                    </el-pagination> -->
+                    <!-- <el-backtop target=".page-component__scroll .el-scrollbar__wrap" :visibility-height=50>
+                    </el-backtop> -->
                 </el-footer>
                 </el-scrollbar>
             </el-container>
@@ -132,7 +135,14 @@ export default {
             vitaPicUrl,
             learninterestPicUrl,
             entertaindivPicUrl,
-            gongwuyuanPicUrl
+            gongwuyuanPicUrl,
+            currentpage: 1,
+        }
+    },
+    methods:{
+        handleCurrentChange(){
+            this.$router.push({name: 'homepage', params:{page: this.currentpage}})
+            console.log(this.currentpage)
         }
     }
 }
@@ -154,8 +164,8 @@ export default {
     text-align: center;
 }
 .myavatar{
-    background-color: #FAFAFA
-   
+    background-color: #FAFAFA;
+    // background-color: #F4F4F5
 }
 
 .el-avatar>img{
@@ -184,7 +194,7 @@ export default {
 }
 
 .mainandfooter{
-    border-left: 2px solid #EEEEEE;
+    // border-left: 2px solid #EEEEEE;
     border-radius: 2px;
     margin-left: 50px;
     // margin-right: 150px;
@@ -228,6 +238,8 @@ export default {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 2em;
+    // background-color: #FAFAFA
+    background-color: #FFFFFF
 }
 
 .separatediv{
@@ -244,23 +256,40 @@ p{
 }
 
 .vitadiv{
-    border: 2px solid #EEEEEE;
+    // border: 2px solid #EEEEEE;
     height: 200px;
 }
 
 .learninterestdiv{
-    border: 2px solid #EEEEEE;
+    // border: 2px solid #EEEEEE;
     height: 200px;
 }
 
 .entertaindiv{
-    border: 2px solid #EEEEEE;
+    // border: 2px solid #EEEEEE;
     height: 200px;
 }
 
 .gongwuyuandiv{
-    border: 2px solid #EEEEEE;
+    // border: 2px solid #EEEEEE;
     height: 200px;
+}
+
+.footer{
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+.pagecount{
+    text-align: center;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color: #939393;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled):hover{
+    color: #a09898
 }
 
 .view-box-homepage{
@@ -281,7 +310,6 @@ p{
     // overflow: scroll;
     overflow-x: auto;
     // height: 100%;
-    
 }
 // .el-scrollbar__view{
 //     height: 100%;

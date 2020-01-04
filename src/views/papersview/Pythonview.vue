@@ -1,9 +1,9 @@
 <template>
     <div class="paperdiv">
-        <el-container style="padding: 0px 70px">
+        <el-container style="padding: 0px 0px 0px 70px">
             <el-aside class = "sidenav" width="200px">
-                <el-scrollbar class='aside-component__scroll' wrap-class="aside" wrap-style="color: red;" view-style="font-weight: bold;" view-class="view-box-pythonview" :native="false">
-                    <el-menu router default-active="pythonbasic" class="el-menu-python">
+                <el-scrollbar class='aside-component__scroll' wrap-class="aside" wrap-style="" view-style="font-weight: bold;" view-class="view-box-pythonview" :native="false">
+                    <el-menu router default-active="/paper/python/pythonbasic/typeconversion" class="el-menu-python">
                         <el-submenu index="pythonbasic">
                             <template slot="title">
                                 <i class="el-icon-location"></i>
@@ -37,10 +37,12 @@
                     </el-menu>
                 </el-scrollbar>
             </el-aside>
-            <el-main>
-                <div class="pythoncontentdiv">
-                    <router-view></router-view>
-                </div>
+            <el-main class="pythonmain">
+                <el-scrollbar class='aside-component__scroll' wrap-class="aside" wrap-style="" view-style="font-weight: bold;" view-class="view-box-pythonview" :native="false">
+                    <div class="pythoncontentdiv">
+                        <router-view></router-view>
+                    </div>
+                </el-scrollbar>
             </el-main>
         </el-container>
     </div>    
@@ -63,11 +65,28 @@ export default {
 
 .el-menu-python{
     background-color: #FAFAFA;
+    // background-color: #FFFFFF;
     border: 0px;
+    
+}
+
+.el-menu-python .el-menu-item{
+    background-color: #FAFAFA;
+}
+
+
+.el-menu-python .el-submenu__title{
+    background-color: #FAFAFA;
+}
+
+.pythonmain{
+    padding: 0px 0px 0px 50px;
+    background-color: #FAFAFA;
 }
 
 .pythoncontentdiv{
-    height: 100%;
+    height: 1000px;
+    margin-right: 110px;
     background-color: #eeeeee;
     // border-left: 1px solid #bebebe 
 }
@@ -104,6 +123,12 @@ export default {
     // padding-left: 15px;
     margin-top: 20px;
 }
+
+// .pythonmain .el-scrollbar__bar.is-vertical{
+//     margin-top: 0px;
+// }
+
+
 
 
 </style>

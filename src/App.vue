@@ -37,6 +37,7 @@ export default {
     width: 100%;
     height: 100%;
     background-color: #FAFAFA;
+    // background-color: #F4F4F5;
     overflow: hidden;
 }
 .el-header{
