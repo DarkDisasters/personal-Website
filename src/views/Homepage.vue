@@ -1,7 +1,7 @@
 <template>
     <div class="homepage">
         <el-container class = "outtercontainer"  style="padding: 0px 0px 0px 70px">
-            <el-aside width="350px" class="mybasicinfo">
+            <el-aside class="mybasicinfo">
                 <div class="avatardiv">
                     <el-avatar :src="myavatarUrl" class="myavatar" shape="square" :size="300" fit="contain"></el-avatar>
                 </div>
@@ -70,8 +70,8 @@
                                 <h2>打算考公务员啦</h2>
                                 <p>最近在室友的怂恿下决定考公务员，其实不是很像考，但还是找了点视频看，还买了几本书，但是买了书后不知道为啥不怎么看视频了</p>
                             </div>
-                            <div class="picdiv">
-                                <el-image :src="gongwuyuanPicUrl" style="width:190px; height:190px" fit="contain" class="homeimg"></el-image>
+                            <div class="picdiv" style="background-image">
+                                <el-image :src="gongwuyuanPicUrl"  fit="contain" class="homeimg"></el-image>
                             </div>
                         </div>
 
@@ -150,13 +150,21 @@ export default {
 
 <style lang="scss">
 .homepage{
+    overflow: hidden;
+    height: 100%;
+    // width: 100%;
     // height: 1000px;
 }
 .outtercontainer{
-    height: 1000px;
+    height: 100%;
+    overflow: hidden;
+    // position: relative;
+    // height: 1000px;
 }
 
 .mybasicinfo{
+    // width:350px;
+    width: 25%;
     // background-color: #b9b7b7
 }
 .avatardiv{
@@ -173,19 +181,18 @@ export default {
 }
 
 .info{
-    
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     color: #939393;
     font-size: 0.95em;
 }
 
 .detaildiv{
-    margin-top: 25px;
-    margin-left: 50px;
-    width: 300px;
-    span{
-        display: inline-block;
-    }
+    // margin-top: 25px;
+    margin-left:27px;
+    // width: 300px;
+    // span{
+    //     display: inline-block;
+    // }
 }
 
 .githubspan, .csdnspan{
@@ -194,6 +201,9 @@ export default {
 }
 
 .mainandfooter{
+    width: 75%;
+    height: 700px;
+    // height: 500px;
     // border-left: 2px solid #EEEEEE;
     border-radius: 2px;
     margin-left: 50px;
@@ -212,7 +222,7 @@ export default {
 .contentdiv{
     margin-top: 10px;
     margin-left: 50px;
-    height: 1000px;
+    // height: 1000px;
     // background-color: #EEEEEE;
 }
 
@@ -297,13 +307,13 @@ p{
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    height: 100%;
+    // height: 100%;
 }
 
 
 .page-component__scroll{
     width: 100%;
-    height: 100%;
+    // height: 100%;
     
 }
 .el-scrollbar__wrap {

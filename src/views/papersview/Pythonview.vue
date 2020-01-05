@@ -91,7 +91,7 @@ export default {
     // border-left: 1px solid #bebebe 
 }
 
-.view-box-pythonview{
+.paperdiv .view-box-pythonview{
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -99,7 +99,7 @@ export default {
     height: 100%;
 }
 
-.aside-component__scroll{
+.paperdiv .aside-component__scroll{
     width: 100%;
     height: 100%;
 }
@@ -108,7 +108,7 @@ export default {
 //     margin-right: -17px;
 // }
 
-.aside-component__scroll .el-scrollbar__wrap {
+.paperdiv .aside-component__scroll .el-scrollbar__wrap {
 
     // height: 100%;
     // width: 100%;
@@ -118,7 +118,7 @@ export default {
     
 }
 
-.aside-component__scroll .el-scrollbar__bar.is-vertical{
+.paperdiv .aside-component__scroll .el-scrollbar__bar.is-vertical{
     // height: 100%;
     // padding-left: 15px;
     margin-top: 20px;

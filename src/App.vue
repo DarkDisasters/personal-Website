@@ -45,17 +45,12 @@ export default {
 }
 
 .el-main{
+    height: 100%;
+    width: 100%;
     padding-right: 0px;
 }
 
-// .page-component__scroll{
-//     height: 100%;
-// }
-// .page-component__scroll .el-scrollbar__wrap {
-//     overflow-x: auto;
-//     // width: 110%; height: 120%;
-//     min-height: 200px;
-// }
+
 
 
 </style>

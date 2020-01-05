@@ -1,23 +1,23 @@
 <template>
     <div class="navContainer" >
-        <el-row :gutter="8">
-            <el-col :lg="2" :xl="2" class="avatar">
+        <el-row :gutter="8" style="height:64px;">
+            <el-col :xs="3" :sm="2" :md="2" :lg="3" :xl="2" class="avatar">
               <div>
                 <el-avatar :src="avatarUrl" shape="square" :size="52" fit="fill"></el-avatar>
               </div>
             </el-col>
-            <el-col :lg="3" :xl="3" class="blogname">
+            <el-col :xs="8" :sm="7" :md="6" :lg="5" :xl="3" class="blogname">
                 <span class="name">XiXiWang's Blog</span>
             </el-col>
-            <el-col :lg="3" :xl="3" class="blank"></el-col>
-            <el-col :lg="6" :xl="6" class="search">
+            <el-col :xs="0" :sm="1" :md="1" :lg="1" :xl="3" class="blank" hidden-sm-and-down></el-col>
+            <el-col :xs="0" :sm="1" :md="2" :lg="5" :xl="6" class="search" hidden-sm-and-down>
               <el-input class = "searchinput" placeholder="search" v-model="input" size="42" clearable>
               </el-input>
             </el-col>
-            <el-col :lg="7" :xl="7">
+            <el-col :xs="13" :sm="12" :md="10" :lg="7" :xl="7">
                 <Navbar/>
             </el-col>
-            <el-col :lg="3" :xl="3">
+            <el-col :xs="0" :sm="1" :md="3" :lg="3" :xl="3" hidden-sm-and-down>
               <el-button size="large" plain><span>SIGN OUT</span><i class="el-icon-user el-icon--right"></i></el-button>
             </el-col>
         </el-row>
@@ -76,7 +76,7 @@ export default {
     font-size: 1.8em;
     color: #409EFF;
     line-height: 64px;  /*设置line-height与父级元素的height相等*/
-    overflow: hidden;   /*防止内容超出容器或者产生自动换行*/
+    // overflow: hidden;   /*防止内容超出容器或者产生自动换行*/
   }
 }
 
